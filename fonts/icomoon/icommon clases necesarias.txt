@@ -1,0 +1,14 @@
+Clases predfinidas de los iconos
+
+Contacto
+
+icon-phone
+icon-mail2
+icon-chat
+
+Redes sociales
+
+icon-twitter
+icon-facebook
+icon-linkedin
+icon-dribbble

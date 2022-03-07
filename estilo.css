@@ -1,0 +1,674 @@
+/*Agregamos la fuente Lato*/
+@font-face {
+    font-family: 'Lato';
+    src: url('fonts/Lato/Lato-Regular.ttf');
+  }
+ 
+  @font-face {
+    font-family: 'Lato-Light';
+    src: url('fonts/Lato/Lato-Light.ttf');
+  }
+
+  @font-face {
+    font-family: 'Lato-Hair';
+    src: url('fonts/Lato/Lato-Hairline.ttf');
+  }
+
+
+/*Sacamos ciertas características a las listas  y enlaces de manera general (afectarán a toda la página) */
+nav{ list-style:none; position: absolute;}
+li{ display:inline-block;}
+a{text-decoration:none; color: black; }
+
+
+/*PRIMERA ZONA PÁGINA*/
+
+/*Establecemos la imagen de fondo de cabecera que ocupará el 100% de la pantalla; ajustamos el alto al alto propio de la imagen*/
+.imagenFondo{
+    background-image : url('images/img_bg_2.jpg');
+    background-repeat: no-repeat;
+    background-size:cover;
+    height:56.25em;
+    max-height: 75em;
+    margin-top: -1.25em;
+    max-width: 2044px;
+    min-width: 1660px;
+}
+
+/*Oscurecemos la cabecera, tal y como se muestra en el ejemplo dado*/
+.imagenFondo:before {
+	content:'';
+	position: absolute;
+    height:56.25em;
+    max-width: 2044px;
+    min-width: 1660px;
+    top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	background-color: rgba(0,0,0,0.6);
+}
+
+/*Hacemos que el cuerpo de la cabecera ocupe un 70% de su tamaño total y lo centramos*/
+.centrar{ width: 70%; margin-left: 15.5em; min-width: 15.625em; }
+
+/*Damos color blanco al logo y ajustamos su tamaño a 40px. También lo convertimos a mayúsculas para que coincida con el ejemplo dado*/
+.logo{ width: 30%; margin-top: 1.875em;}
+.logo a{color:white; font-size: 40px; text-transform:uppercase;}
+
+/*Ponemos el punto del logo en color verde*/
+.logo a em{color:#0ADDBF;}
+
+/*Recolocamos el menú superior*/
+.menusuperior{margin-top:-3.125em; margin-left: 61em;}
+
+/*Ponemos de color blanco los enlaces (menú cabecera) y tamaño de la letra a 16px*/
+.menusuperior a{ color:white; margin: 0.625em; font-size: 16px;}
+
+/*Damos color blanco al texto de cabecera y justificación izquierda, ajustamos su tamaño en em*/
+.textocabecera{
+   position: absolute;
+   width: 33%;
+   margin-left: 3%;
+   text-align: left;
+   margin-top: 21.875rem;
+   font-size: 1.8em;
+   color:white;
+   font-family: Lato-Hair, sans-serif;
+}
+
+/*--Comenzamos con el formulario del encabezado--*/
+/*Añadimos la parte verde superior y la reajustamos*/
+.verde{
+    position:absolute;
+    width: 20.625em;
+    height: 10px;
+    margin-top:16.875em;
+    margin-left:52%;
+    background-color: #0ADDBF;
+}
+
+/*Creamos el formulario dándole el tamaño preestablecido. Lo alineamos a la derecha. Color de fondo blanco*/
+.formulario{
+    width: 20.625rem;
+    height: 31.25rem;
+    margin-top: -12px;
+    background-color: white;
+    margin-left: 0px;
+    font-size: 1.1em;
+}
+
+/*Título del formulario: color negro, tipografía, alineación izquierda*/
+.formulario h3{
+    padding-top: 20px;
+    color: black;
+    font-family: Lato, sans-serif;
+    text-align: left;
+    margin-left: 30px;;
+}
+.formulario form{text-align: left; margin-left: 30px;}
+
+/*Espacios entre cajas dentro del formulario*/
+.partesForm{margin-bottom: 10px;}
+
+/*Color del texto interior del formulario en gris. Redondeamos las puntas de las cajas.
+  Estilo de la letra: bold (para que se asemeje más al ejemplo dado).
+  Bordes en gris claro.*/
+.partesForm input{
+    font-style: bold;
+    width: 262px;
+    height: 40px;
+    border-radius:5px;
+    margin-top: 10px;
+    border: lightgray 2px solid;
+    color: #777;
+}
+/*Mismas caracterísiticas que la etiqueta input*/
+.partesForm select{
+    width: 270px;
+    height: 50px;
+    border-radius:5px;
+    margin-top: 10px;
+    border: lightgray 2px solid;
+    color: #777;
+}
+
+/*Cuando se selecciona una caja del formulario, su borde cambia de color  a verde*/
+.partesForm select:focus{ border-color:#0ADDBF;}
+.partesForm input:focus{ border-color:#0ADDBF;}
+
+/*Establecemos las características del botón dentro del formulario: tamaño, color, bordes redondeados*/
+.formulario .botonForm input{
+    width: 270px;
+    height: 50px;
+    background-color: #0ADDBF;
+    border-radius:5px;
+    border: none;
+    color:white;
+}
+
+/*Características generales: tipografía, color texto, alineación*/
+body{
+    position: relative;
+    text-align: center;
+    margin: 0 auto;
+    color: #777;
+    font-family: Lato, sans-serif;
+    font-size: 16px;
+}
+
+/*-----SEGUNDA ZONA------*/
+
+/*Ordenamos las cajas centrales. Ocupan el 70%.
+  Color del texto negro
+  "Dibujamos" las áreas ocupadas*/
+.grid2{
+    width: 70%;
+    margin-top: -6.25em;
+    margin-bottom: -6.25em;
+    display:inline-grid;
+    grid-template-columns: repeat(3, 26.25em);
+    grid-template-rows: repeat(3,  28.125em) ;
+    grid-auto-rows: minmax(6.25em, auto);
+    margin-left: 3.125em;
+    color: black;
+    grid-template-areas: 
+        'grid2_cabecera grid2_cabecera grid2_cabecera'
+        'grid2_primero  grid2_segundo  grid2_tercero '
+        'grid2_cuarto   grid2_quinto   grid2_sexto   ';
+ }
+
+/*Ajustamos el texto superior de la zona 2.
+  Color de texto negro. Tamaño de texto en em.*/
+ .grid2_cabecera{
+    width: 43.125em;
+    font-size: 1.2em;
+    color:black;
+    margin: auto;
+}
+.grid2_cabecera p{ color:grey;}
+
+/*Adaptamos el estilo de la fuente Lato*/
+.grid2_cabecera h2{ font-size: 3.125em; font-family: Lato-Hair, sans-serif;}
+
+/*Ajustamos la imagen a la caja contenedora*/
+.grid2 img{
+    margin-left: -2.5em; 
+    margin-top: -1.25em;
+    margin-bottom: -0.313em;
+	width:25em;
+    height: 15.625em;
+    background-size: 100% 100%;
+}
+
+/*Establecemos las caracterísitcas de cada subcaja contenedora:
+  -Damos sombreado al contenedor en sus bordes derecho e inferior cuando pasamos el ratón por encima
+  -Los botones cambian de colo al pasar el ratón por encima*/
+
+ .grid2_cabecera{ grid-area: grid2_cabecera;}
+ .grid2_primero { grid-area: grid2_primero; margin:0.625em; margin-top:-1.875em;  font-size: 0,8em; box-shadow: 0 0em 2.5em  #777;}
+ .grid2_segundo { grid-area: grid2_segundo; margin:0.625em; margin-top:-1.875em;  font-size: 0,8em; box-shadow: 0 0em 2.5em  #777;}
+ .grid2_tercero { grid-area: grid2_tercero; margin:0.625em; margin-top:-1.875em;  font-size: 0,8em; box-shadow: 0 0em  2.5em #777;}
+ .grid2_cuarto  { grid-area: grid2_cuarto;  margin:0.625em; margin-bottom:-1.875em; font-size: 0,8em; box-shadow: 0 0em 2.5em  #777;}
+ .grid2_quinto  { grid-area: grid2_quinto;  margin:0.625em; margin-bottom:-1.875em; font-size: 0,8em; box-shadow: 0 0em 2.5em  #777;}
+ .grid2_sexto   { grid-area: grid2_sexto;   margin:0.625em; margin-bottom:-1.875em; font-size: 0,8em; box-shadow: 0 0em 2.5em  #777;}
+ .grid2_primero h2{ color:#0ADDBF;}
+ .grid2_segundo h2{ color:#0ADDBF;}
+ .grid2_tercero h2{ color:#0ADDBF;}
+ .grid2_cuarto  h2{ color:#0ADDBF;}
+ .grid2_quinto  h2{ color:#0ADDBF;}
+ .grid2_sexto   h2{ color:#0ADDBF;}
+ .grid2_primero:hover{ box-shadow: 0.125em 0.125em  0px 0.125em   lightgrey;}
+ .grid2_segundo:hover{ box-shadow: 0.125em  0.125em  0px 0.125em  lightgrey;}
+ .grid2_tercero:hover{ box-shadow: 0.125em  0.125em  0px 0.125em  lightgrey;}
+ .grid2_cuarto:hover { box-shadow: 0.125em  0.125em  0px 0.125em  lightgrey;}
+ .grid2_quinto:hover { box-shadow: 0.125em  0.125em  0px 0.125em  lightgrey;}
+ .grid2_sexto:hover  { box-shadow: 0.125em  0.125em  0px 0.125em  lightgrey;}
+
+
+/*botones de la zona 2:
+  -fondo negro
+  -Levemente redondeados
+  -Letra blanca*/
+.grid2 p span {
+    position: absolute;
+    margin-left:-5.625em;
+    margin-top: 0.625em;
+    width: 11.25em;
+    height: 2.188em;
+    background-color: black;
+    border-radius:0.313em;
+    color: white;
+    padding-top: 0.75em; 
+}
+
+/*Establecemos que al pasar el ratón por encima cambie su color a verde*/
+.grid2 p span:hover{ background-color:#0ADDBF;}
+
+
+
+/*---TERCERA ZONA -----*/
+
+/*Ajustamos el ancho que ocupará el contenedor en 70%. Lo centramos.
+ "Dibujamos" sus áreas.*/
+.grid3{
+   width: 70%;
+   margin:auto;
+   margin-bottom: 3.125em;
+   display: inline-grid;
+   grid-template-columns: repeat(4 auto, 1fr);
+   grid-auto-rows: minmax(6.25em, auto);
+   text-align: left;
+   color: black;
+   grid-template-areas: 
+       'grid3_primero grid3_segundo grid3_tercero grid3_cuarto';
+}
+
+.grid3_primero { grid-area: grid3_primero; }
+.grid3_segundo { grid-area: grid3_segundo; }
+.grid3_tercero { grid-area: grid3_tercero; }
+.grid3_cuarto  { grid-area: grid3_cuarto;  }
+
+/*Los enlaces aparecerán en bloque*/
+.grid3 li{display: block; margin-bottom: 0.625em;}
+/*Color de los enlaces en verde, tipo de fuente: bold*/
+.grid3 li a{color:#0ADDBF; font-weight: bold;}
+
+/*Al pasar el ratón por encima, el enlace aparece subrayado*/
+.grid3 li a:hover{text-decoration:underline;}
+
+/*Lo ponemos en mayúsculas, como en el ejemplo y tamaño de fuente 15*/
+.grid3 h3{ margin-left: 2.7em; font-size:15px; text-transform:uppercase;}
+
+/*Hacemos que exista una mayor distancia entre las cajas uno y las 3 siguientes, como podemos ver en la imagen de muestra*/
+.grid3 .grid3_primero{width: 25em; margin-right: 4.375em;}
+
+/*Ajustamos texto de "Acerca de nosotros"*/
+.grid3 .grid3_primero p{ color: #777;margin-left: 2.5em;}
+
+/*Agregamos una línea divisoria, como se muestra en el ejemplo dado*/
+.linea {width: 70%; margin: auto; height: 0.063em; background-color:lightgrey;}
+
+/*Footer: ocupa el 70%. Con máxima resolución, las cajas aparecerán en línea.*/
+.grid4{
+    width: 70%;
+    margin: auto;
+    margin-top: 1.875em;
+    display: inline-grid; 
+    grid-template-columns: 1fr  1fr; 
+    grid-template-areas: 
+        "grid4_primero  grid4_segundo"; 
+}
+/*Texto de la primera caja alineado a la izquierda, segunda caja a la derecha.*/
+.grid4_primero { grid-area: grid4_primero; text-align: left;}
+.grid4_segundo { grid-area:  grid4_segundo;text-align: right; margin-right: 4.375em;}
+
+
+footer small{margin-left: 2.5em;display:block;font-style: bold;}
+
+/*Enlaces en color verde*/
+footer a{ color: #0ADDBF;}
+
+
+/*--------------------------RESPONSIVE/ADAPTATIVA-------------------------------*/
+/*La página web se adaptará a distintos tamaños de pantalla. Diseño personalizado para tablet y teléfono móvil*/
+
+/* AJUSTES TAMAÑO 1200PX */
+@media (max-width:1200px){
+    /*Ajustes imagen fondo cabecera*/
+    .imagenFondo{min-width: 860px;}
+    .imagenFondo:before { min-width: 860px;}
+
+    /*Recolocamos el nombre de la empresa sacando algo de margen a la izquierda y cambiando su tamaño*/
+    .logo{ width: 50%; margin-left: -14em;}
+
+    /*Hacemos lo mismo con el menú superior*/
+    .menusuperior{margin-left: 20em;}
+
+    /*Centramos el texto de la cabecera que pasar a ocupar todo el ancho*/
+    .textocabecera{width: 70%; margin-left: -5.5em; text-align: center; margin-top: 15%; font-size: 150%; }
+
+    /*Cambiamos de posición el formulario, ahora estará situado en la parte inferior del texto de cabecera 
+       y ocupará el 90% del ancho de la pantalla*/
+    .verde{ width: 70%; margin-top:33%; margin-left: -8.5em;}
+    .formulario{ width: 100%;}
+     /*Aumentamos el tamaño de los componentes del formulario*/
+    .partesForm input{ width: 97%;}
+    .partesForm select{width: 98%;}
+    .formulario .botonForm input{ margin-top: 1% ; width: 98%;}
+ 
+    /*La zona 2 pasa a tener dos columnas y 3 filas*/
+    .grid2{
+        grid-template-columns: repeat(2, 21.875em);
+        grid-template-rows: repeat(4, 26.875em) ;
+        margin-left: -0.05em;
+        grid-template-areas: 
+            'grid2_cabecera grid2_cabecera '
+            'grid2_primero  grid2_segundo  '
+            'grid2_tercero  grid2_cuarto   '
+            'grid2_quinto   grid2_sexto    ';
+     }
+
+     /*Cambiamos el tamaño del texto superior de la zona 2 y ajustamos las imágenes al tamaño de las cajas*/
+     .grid2_cabecera{ width: 33em;}
+     .grid2 img{margin-left: -2.5em;  margin-top: -1.25em; margin-bottom: -0.313em; width:20.625em; height:12.5em;}
+    
+    /*Ajustamos los márgenes*/
+    .grid2_primero {margin:0.625em;}
+    .grid2_segundo {margin:0.625em;}
+    .grid2_tercero {margin:0.625em;}
+    .grid2_cuarto  {margin:0.625em;}
+    .grid2_quinto  {margin:0.625em;}
+    .grid2_sexto   {margin:0.625em;}
+    
+    /*Cambiamos también la disposición de la zona 3, ahora estará en bloque en lugar de en fila.
+      Aparecerá situado al lado izquiero de la pantalla*/
+    .grid3{
+        width: 70%;
+        margin-top: -12em;
+        margin-left:7.9em;
+        display: block;
+        grid-template-columns: repeat(1, 26em);
+        grid-template-rows: repeat(4 auto, 1fr);
+        grid-template-areas: 
+            'grid3_primero'
+            'grid3_segundo'
+            'grid3_tercero'
+            'grid3_cuarto '; 
+     }
+
+     .grid3 .grid3_primero {width: 100%;}
+}
+
+/* AJUSTES TAMAÑO 820PX  */
+@media (max-width:820px){
+    /*Ajustes imagen fondo cabecera*/
+    .imagenFondo{min-width: 700px;}
+    .imagenFondo:before {min-width: 700px;}
+
+    /*Aumentamos el tamaño del nombre de la marca y sacamos margen a la izquierda*/
+    .logo{width: 90%; margin-left: -19em;}
+
+    /*Resituamos el menú superior*/
+    .menusuperior{margin-left: 8em;}
+     
+    /*Aumentamos el tamaño del texto de cabecera, eliminamos margen a la izquierda y añadimos espacio por parte superior*/
+    .textocabecera{width: 90%; margin-top: 18%; font-size: 130%; margin-left: -9.8em;}
+
+    /*Ajustamos nuevamente el formulario y sus componentes (como es el tamaño de las cajas y botón de envío)*/
+    .verde{width: 90%; margin-top:45%; margin-left: -13em;}
+    .formulario{width: 100%;}
+    .partesForm input{width: 97%;}
+    .partesForm select{ width: 98%;}
+    .formulario .botonForm input{ margin-top: 1% ; width: 98%;}
+
+    /*Cambiamos el tamaño del las cajas en la zona 2*/
+    .grid2{
+        width: 90%;
+        grid-template-columns: repeat(2, 21em);
+        grid-template-rows: repeat(4,  26em) ;
+        grid-auto-rows: minmax(7.25em, auto);
+        margin-left: -0.5em;
+        grid-template-areas: 
+        'grid2_cabecera grid2_cabecera '
+        'grid2_primero  grid2_segundo  '
+        'grid2_tercero  grid2_cuarto   '
+        'grid2_quinto   grid2_sexto    ';
+     }
+
+     /*Ajustamos el texto superior de la zona 2 y el tamaño de las imágenes*/
+     .grid2_cabecera{ grid-area: grid2_cabecera; width: 33em; text-align: center; margin: auto;}
+     .grid2 img{width:19.8em; height: 11em;}
+
+     /*Eliminamos los márgenes izquierdos de la zona 3*/
+     .grid3{ width: 90%; margin-top: -12em; margin-left: 0.5em; }
+
+     /*Aumentamos tamaño de la línea divisoria del footer y ajustamos los tamaños de ambas cajas*/
+     .linea{ width: 95%;}
+     .grid4{ width: 100%; margin: auto; margin-top: 1.875em; display: inline-grid;}
+}
+
+/* AJUSTES TAMAÑO 600PX  */
+
+@media (max-width:680px){
+    /*Ajustes imagen fondo cabecera*/
+    .imagenFondo{min-width: 540px;}
+    .imagenFondo:before {min-width: 540px; }
+
+    /*Aumentamos el tamaño del nombre de la marca*/
+    .logo{width: 250px;margin-left: -14em;}
+    /*Eliminamos el menú superior*/
+    .menusuperior{display: none;}
+    /*Reajuste tamaño y posición en el texto de cabecera*/
+    .textocabecera{width: 90%; text-align: center; margin-top: 18%; font-size: 110%; margin-left: -210px;}
+
+    /*Reajuste tamaño formulario*/
+    .verde{width: 90%; margin-top:48%; margin-left: -13rem;}
+
+    /*Cambiamos el tamaño de las cajas y del botón de enviar del formulario ajustándolo al nuevo ancho*/
+    .partesForm input{width: 93%;}
+    .partesForm select{width: 95%;}
+    .formulario .botonForm input{ width: 95%;}
+    /*Encogemos el tamaño de las cajas de la zona 2 para que vuelvan a encajar en el ancho de pantalla*/
+    .grid2{
+        width: 90%;
+        margin-top: -4em;
+        margin-left:2em;
+        grid-template-columns: repeat(1, 30em);
+        grid-template-rows: repeat(7,  29em) ;
+        grid-auto-rows: minmax(5.25em, auto);
+        grid-template-areas: 
+        'grid2_cabecera'
+        'grid2_primero '
+        'grid2_segundo '
+        'grid2_tercero '
+        'grid2_cuarto  '
+        'grid2_quinto  '
+        'grid2_sexto   ';
+     }
+
+    /*Reajuste tamaño letra y márgenes*/
+    .grid2_cabecera{  font-size: 100%; margin-top: 1em; width: 19em; margin: auto;}
+    /*Reajuste tamaño fotografías*/
+    .grid2 img{ width:28.76em; height: 16em;}
+
+    /*Eliminamos margen entre la zona 3 y la zona 2*/
+    .grid3{ margin-top: -20em;}
+    
+    /*Centramos las cajas del footer*/
+    .grid4{
+        width: 50%;
+        display:block; 
+        grid-template-columns: repeat(2, 12em); 
+        grid-template-rows: repeat(2, 2fr);
+    }
+    /*Centramos texto footer*/
+    .grid4_primero{ text-align: center;}
+    .grid4_segundo{ text-align: center; margin-left: 4em;}
+    /*Aumentamos el tamaño de la línea divisoria en el footer*/
+    .linea {width: 100%;}
+}
+
+/*AJSUTES PX MÍNIMOS*/
+@media (max-width:460px){
+
+    /*Ajustes imagen fondo cabecera*/
+    .imagenFondo{ min-width: 380px;}
+    .imagenFondo:before {min-width: 380px;}
+
+    /*Recolocamos el texto de cabecera*/
+    .textocabecera{margin-top: 6rem;}
+    
+    /*Reajustamos el formulario*/
+    .verde{margin-top:80%; margin-left: -14rem;}
+
+    /*Encogemos el tamaño de las cajas de la zona 2 para que vuelvan a encajar en el ancho de pantalla*/
+    .grid2{
+        width: 100%;
+        margin-top: -4em;
+        grid-template-columns: repeat(1, 20em);
+        grid-template-rows: repeat(7,  26em) ;
+        grid-auto-rows: minmax(5.25em, auto);
+        grid-template-areas: 
+        'grid2_cabecera'
+        'grid2_primero '
+        'grid2_segundo '
+        'grid2_tercero '
+        'grid2_cuarto  '
+        'grid2_quinto  '
+        'grid2_sexto   ';
+     }
+
+     /*Aumentamos el tamaño de la fuente y sacamos algo de margen*/
+     .grid2_cabecera{ font-size: 100%; margin-top: 2em; width: 15em; text-align: center; margin: auto;}
+     /*Reajuste tamaño fotografías*/
+     .grid2 img{width:18.8em;height: 12em;}
+     /*Ajustes del pie de página para que se muestren centrados y una caja encima de otra*/
+     .grid4{
+        width: 80%;
+        display:block; 
+        grid-template-columns: repeat(1, 26em); 
+        grid-template-rows: repeat(2, 2fr);
+        grid-template-areas: 
+            ' grid4_primero ' 
+             'grid4_segundo'; 
+    }
+    /*Centramos texto pie de página*/
+    .grid4_primero{ text-align: center;}
+}
+
+
+/*------------------------------------------------------------------------------------------------------------------------*/
+
+/*AJUSTE PARA TABLET*/
+
+@media only screen and (min-device-width : 768px) and (max-device-width : 1024px) {
+
+/*De manera general, establecemos como tamaño de las cajas un 90% del totalidad de la pantalla */
+
+ /*Damos un nuevo tamaño a la imagen de fondo de cabecera*/
+ .imagenFondo{width: 1024px;}
+ .imagenFondo::before {width: 1024px;}
+ /*Eliminamos el menú superior*/
+ .menusuperior{display: none;}
+ /*Aumentamos el tamaño del nombre de la página y lo resituamos*/
+ .logo{width: auto; font-size: 45px; margin-left: -6em; margin-top: 1em;}
+ /*Ajustamos el texto de la cabecera*/
+ .textocabecera{margin-top: 8rem; width: auto; margin-left: -10em;}
+ /*Encajamos el formulario en el ancho de la pantalla*/
+ .verde{width: 95%; margin-top:30%; margin-left: -15em;}
+ .formulario{ font-size: 25px; height: 22em; margin-top: -0.78em;} 
+
+/*Cambiamos el tamaño de las cajas y las recolocamos en columna, ocupando el ancho del disposito móvil*/
+ .grid2{
+     width: 100%;
+     margin-top: -14rem;
+     font-size: 20px;
+     margin: none;
+     grid-template-columns: repeat(2, 31rem);
+     grid-template-rows: repeat(4, 35rem) ;
+     grid-auto-rows: minmax(5.25em, auto);
+     grid-template-areas: 
+     'grid2_cabecera grid2_cabecera'
+     'grid2_primero  grid2_segundo '
+     'grid2_tercero  grid2_cuarto  '
+     'grid2_quinto   grid2_sexto   ';
+  }
+
+ /*Establecemos nuevo tamaño en las imagenes y en la fuente. Lo resituamos.*/
+ .grid2_cabecera{ font-size: 26px; width: 50rem; height: 50rem; padding-top: 10rem; text-align: center; margin: auto;}
+ .grid2 img{width:29.5rem;  height: 18rem; margin-left: -2em;}
+
+ /*Adecuamos el tamaño de la zona 3 y aumentamos el tamaño de fuente */
+ .grid3{width: 90%; margin-top: -8em; margin-left: -1em; font-size: 18px; }
+
+  /*Desplazamos a la izquierda los h3 para que quede todo a la misma altura a la izquierda de la pantalla del móvil*/
+  .grid3 h3{ margin-left: 2.5rem;}
+  .grid3_primero p {width: 90%;}
+
+ /*Recolocamos el pie de página para que se adapte a la nueva forma
+   Lo situamos en bloque para que coincidan una caja debajo del otra*/
+ .grid4{
+     width: 90%;
+     display:block; 
+     grid-template-columns: repeat(1, 20em); 
+     grid-template-rows: repeat(2, 20em);
+     grid-template-areas: 
+         ' grid4_primero' 
+          'grid4_segundo'; 
+ }
+ .linea{width: 80%;}
+ /*Centramos el contenido de pie de página*/
+ .grid4_primero{ text-align: center;}
+ .grid4_segundo{margin-right: 28em;}
+}
+
+/*AJUSTES PARA DISPOSITIVO MÓVIL*/
+@media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
+    /*Ajustamos tamaños de de cabecera*/
+    .imagenFondo{width: 1040px;}
+    .imagenFondo::before {width: 1040px;}
+    /*Eliminamos el menú superior*/
+    .menusuperior{display: none;}
+    /*Aumentamos el tamaño del nombre de la página y lo resituamos*/
+    .logo{width: auto; font-size: 45px; margin-left: -6em; margin-top: 1em;}
+    /*Ajustamos el texto de la cabecera*/
+    .textocabecera{margin-top: 6rem; width: auto;}
+    /*Encajamos el formulario en el ancho de la pantalla*/
+    .verde{width: 104%; margin-top:30%; margin-left: -14.8em;}
+    .formulario{ font-size: 25px; height: 22em; margin-top: -0.78em;} 
+
+   /*Cambiamos el tamaño de las cajas y las recolocamos en columna, ocupando el ancho del disposito móvil*/
+    .grid2{
+        width: 100%;
+        margin-top: -14rem;
+        font-size: 25px;
+        grid-template-columns: repeat(1, 65rem);
+        grid-template-rows: repeat(7, 65rem) ;
+        grid-auto-rows: minmax(5.25em, auto);
+        grid-template-areas: 
+        'grid2_cabecera'
+        'grid2_primero '
+        'grid2_segundo '
+        'grid2_tercero '
+        'grid2_cuarto  '
+        'grid2_quinto  '
+        'grid2_sexto   ';
+     }
+
+    /*Establecemos nuevo tamaño en las imagenes y en la fuente. Lo resituamos.*/
+    .grid2_cabecera{ font-size: 29px; width: 35em; text-align: center; margin: auto;}
+    .grid2 img{width:63.2rem; height: 45rem; margin-left: -1.6em;}
+   
+    /*Adecuamos el tamaño de la zona 3 y aumentamos el tamaño de fuente */
+    .grid3{ width: 100%; margin-top: -25em; margin-left: -1em; font-size: 25px;}
+
+    /*Desplazamos a la izquierda los h3 para que quede todo a la misma altura a la izquierda de la pantalla del móvil*/
+    .grid3 h3{ margin-left: 2.5rem;}
+    .grid3_primero p {width: 100%;}
+
+    /*Recolocamos el pie de página para que se adapte a la nueva forma
+      Lo situamos en bloque para que coincidan una caja debajo del otra*/
+    .grid4{
+        width: 100%;
+        display:block; 
+        grid-template-columns: repeat(1, 26em); 
+        grid-template-rows: repeat(2, 20em);
+        grid-template-areas: 
+            ' grid4_primero ' 
+             'grid4_segundo'; 
+    }
+    
+    /*Centramos el contenido de pie de página*/
+    .grid4_primero{ text-align: center;}
+    .grid4_segundo{margin-right: 28em;}
+}
+
+
+
+
+
+
+
+
+  
